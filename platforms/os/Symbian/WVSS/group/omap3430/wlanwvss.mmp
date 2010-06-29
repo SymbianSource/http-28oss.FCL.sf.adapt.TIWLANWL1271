@@ -1,0 +1,108 @@
+/*
+ * wlanwvss.mmp
+ *
+ * Copyright(c) 1998 - 2010 Texas Instruments. All rights reserved.      
+ * All rights reserved.      
+ * 
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License v1.0 or BSD License which accompanies
+ * this distribution. The Eclipse Public License is available at
+ * http://www.eclipse.org/legal/epl-v10.html and the BSD License is as below.                                   
+ *                                                                       
+ * Redistribution and use in source and binary forms, with or without    
+ * modification, are permitted provided that the following conditions    
+ * are met:                                                              
+ *                                                                       
+ *  * Redistributions of source code must retain the above copyright     
+ *    notice, this list of conditions and the following disclaimer.      
+ *  * Redistributions in binary form must reproduce the above copyright  
+ *    notice, this list of conditions and the following disclaimer in    
+ *    the documentation and/or other materials provided with the         
+ *    distribution.                                                      
+ *  * Neither the name Texas Instruments nor the names of its            
+ *    contributors may be used to endorse or promote products derived    
+ *    from this software without specific prior written permission.      
+ *                                                                       
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS   
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT     
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT  
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT      
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT   
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+
+// MMP file for TI Wilink
+//
+#include        <omapsw\base\variant\zoom2\variant.mmh>
+#include        "kernel\kern_ext.mmh"
+#include        <platform_paths.hrh>
+
+
+TARGET			        TI_wlanpdd.pdd
+TARGETTYPE              pdd
+
+UID 0x100039d0 0x101F8E54
+VENDORID 0x70000001
+
+OS_LAYER_KERNEL_SYSTEMINCLUDE
+
+STATICLIBRARY           wlanosa.lib
+STATICLIBRARY           wlanosadebug.lib
+STATICLIBRARY           wlanhpa.lib
+LIBRARY                 VariantTarget(kaomap,lib) 
+LIBRARY			VariantTarget(resourcemanager,lib) 
+LIBRARY			VariantTarget(t2gpio,lib) 
+LIBRARY			VariantTarget(gpio,lib)
+
+
+// TI macros
+	MACRO HOST_COMPILE
+	MACRO __BYTE_ORDER_LITTLE_ENDIAN
+	MACRO TNETW1273 	 // used if CHIP is 1273
+	MACRO PLATFORM_SYMBIAN=1	
+	MACRO _USER_MODE 	 // has no meaning, but can't compile without it. 
+	MACRO WSPI
+	macro __WAKEUP_3430__
+	
+
+#include "wlanwvss.mmh"
+
+SYSTEMINCLUDE	\epoc32\include
+SYSTEMINCLUDE	\epoc32\include\libc
+SYSTEMINCLUDE	\epoc32\include\domain\osextensions
+SYSTEMINCLUDE	\epoc32\include\tiomap3\assp\34xx
+SYSTEMINCLUDE	\epoc32\include\tiomap3\assp\common
+SYSTEMINCLUDE	\epoc32\include\tiomap3\variant\34xx_sdp
+SYSTEMINCLUDE	\epoc32\include\tiomap3\variant\common
+SYSTEMINCLUDE	\epoc32\include\tiomap3\drivers
+SYSTEMINCLUDE	\epoc32\include\drivers
+SYSTEMINCLUDE	\epoc32\include\drivers\sdio
+
+SYSTEMINCLUDE \sf\os\wlan\wlan_dom\wlan_hpa_api\inc
+SYSTEMINCLUDE \sf\os\wlan\wlan_dom\wlan_osa_api\inc
+
+SYSTEMINCLUDE       \src\cedar\generic\base\tiomap3\e32\drivers\pbus\mmc\sdcard\sdcard3c\sdio
+SYSTEMINCLUDE       \src\cedar\generic\base\tiomap3\e32\drivers\pbus\mmc\sdcard
+
+//SYSTEMINCLUDE		AsspCommonIncludePath
+
+//library			VariantTarget(kaomap,lib)
+
+#ifdef WLAN_SDIO
+library				epbussdio3.lib
+#endif
+
+CAPABILITY ALL
+
+start wins
+win32_headers
+end
+
+EPOCALLOWDLLDATA
+

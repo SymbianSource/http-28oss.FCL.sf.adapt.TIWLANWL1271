@@ -1,0 +1,22 @@
+
+// TWD & utils ==> 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\Ctrl 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\Data_Service\Export_Inc 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\FW_Transfer 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\FW_Transfer\Export_Inc 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\Ctrl\Export_Inc 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\MacServices\Export_Inc 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\FirmwareApi 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\MacServices 
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\TWDriver
+SYSTEMINCLUDE    ..\..\..\..\..\..\utils
+SYSTEMINCLUDE    ..\..\..\..\..\..\utils\XCC
+SYSTEMINCLUDE    ..\..\..\..\..\..\platforms\os\common\inc
+SYSTEMINCLUDE    ..\..\..\..\..\..\TWD\TwIf
+SYSTEMINCLUDE    ..\..\..\..\..\..\Txn
+SYSTEMINCLUDE    ..\..\..\..\..\..\platforms\os\Symbian\WVSS\src\sdio
+SYSTEMINCLUDE    \src\cedar\generic\base\e32\drivers\pbus\mmc\sdcard\sdcard3c\sdio
+
+
+
