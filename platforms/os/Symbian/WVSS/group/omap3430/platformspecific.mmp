@@ -84,8 +84,8 @@ SYSTEMINCLUDE	\epoc32\include\tiomap3\assp\34xx
 SYSTEMINCLUDE	\epoc32\include\tiomap3\assp\common
 SYSTEMINCLUDE	\epoc32\include\tiomap3\variant\34xx_sdp
 SYSTEMINCLUDE	\epoc32\include\tiomap3\variant\common
-SYSTEMINCLUDE	\epoc32\include\tiomap3\drivers
-
+SYSTEMINCLUDE	\epoc32\include\platform\drivers
+SYSTEMINCLUDE	\epoc32\include\platform\drivers\sdio
 
 #include "wlanwvss.mmp"
 

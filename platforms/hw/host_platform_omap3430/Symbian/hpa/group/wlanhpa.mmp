@@ -55,6 +55,7 @@ SYSTEMINCLUDE \epoc32\include\omapsw\base\variant\common
 SYSTEMINCLUDE \epoc32\include\omapsw\base\assp\34xx
 
 SYSTEMINCLUDE \epoc32\include\drivers
+SYSTEMINCLUDE \epoc32\include\platform\drivers
 SYSTEMINCLUDE \epoc32\include\libc
 
 SYSTEMINCLUDE \sf\os\wlan\wlan_dom\wlan_hpa_api\inc
